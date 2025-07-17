@@ -1,0 +1,40 @@
+{
+  "pages": [
+    {
+      "id": "1",
+      "title": "Getting Started",
+      "slug": "getting-started",
+      "description": "Learn how to get started with our documentation system",
+      "category": "guides",
+      "tags": ["beginner", "setup"],
+      "icon": "BookOpen",
+      "iconColor": "#3b82f6",
+      "content": "<h1>Getting Started</h1><p>Welcome to our documentation system! This guide will help you understand how to use and navigate through our documentation.</p><h2>Features</h2><ul><li>Rich text editing</li><li>Category organization</li><li>Search functionality</li><li>Dark/light mode</li></ul>",
+      "order": 0,
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "updatedAt": "2024-01-01T00:00:00.000Z"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Guides",
+      "slug": "guides",
+      "description": "Step-by-step guides and tutorials",
+      "icon": "BookOpen",
+      "iconColor": "#22c55e",
+      "order": 0,
+      "createdAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "name": "API Reference",
+      "slug": "api-reference",
+      "description": "Complete API documentation",
+      "icon": "Code",
+      "iconColor": "#8b5cf6",
+      "order": 1,
+      "createdAt": "2024-01-01T00:00:00.000Z"
+    }
+  ]
+}
