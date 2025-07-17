@@ -9,21 +9,29 @@ import { Badge } from '@/components/ui/badge';
 import { BookOpen, FileText, Search, Palette } from 'lucide-react';
 import Link from 'next/link';
 import { Page } from '@/types';
-import { getStorageData } from '@/lib/storage';
+import { useData } from '@/lib/data-provider';
 
 export default function Home() {
   const [isEditMode, setIsEditMode] = useState(false);
-  const [pages, setPages] = useState<Page[]>([]);
   const [recentPages, setRecentPages] = useState<Page[]>([]);
+  const { data, isLoading } = useData();
 
   useEffect(() => {
     const appState = process.env.NEXT_PUBLIC_APP_STATE;
     setIsEditMode(appState === 'edit');
-
-    const data = getStorageData();
-    setPages(data.pages);
+    
     setRecentPages(data.pages.slice(0, 3));
-  }, []);
+  }, [data.pages]);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-background">
+        <div className="flex items-center justify-center min-h-screen">
+          <div className="animate-pulse text-muted-foreground">Loading...</div>
+        </div>
+      </div>
+    );
+  }
 
   const features = [
     {
